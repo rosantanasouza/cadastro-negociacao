@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6", 
+      "rootDir": "./app/src", 
+      "outDir": "./app/dist/js",
+      "noEmitOnError": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "strictNullChecks": true,
+      "experimentalDecorators": true 
+    }
+  }
