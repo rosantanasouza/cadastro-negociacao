@@ -1,11 +1,14 @@
+import { DiaDaSemana } from "../enums/dia-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
+import { MensagemView } from "../views/mensagem-view.js";
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
     private inputQuantidade: HTMLInputElement;
     private inputValor: HTMLInputElement;
     private listaNegociacoes = new Negociacoes();
+    private mensagemView = new MensagemView('#mensagemView');
 
     constructor() {
         this.inputData = document.querySelector('#data') as HTMLInputElement;
@@ -18,14 +21,25 @@ export class NegociacaoController {
             this.inputData.value,
             this.inputQuantidade.value,
             this.inputValor.value
-        )
-        console.log(novaNegociacao); //Exibindo a negociação criada.
-        this.listaNegociacoes.adicionarNegociacao(novaNegociacao); //Adicionando a negociação na lista de negociações.
-        console.log(this.listaNegociacoes.listarNegociacoes()); //Exibindo a lista atualizada das negociações.
-
+        )        
+        
+        if (this.validaDiaUtil(novaNegociacao.data)) {            
+            console.log(novaNegociacao); //Exibindo a negociação criada.
+            this.listaNegociacoes.adicionarNegociacao(novaNegociacao); //Adicionando a negociação criada na lista de negociações.
+            console.log(this.listaNegociacoes.listarNegociacoes()); //Exibindo a lista atualizada das negociações.
+            this.limparFormulario();
+        } else {            
+            this.mensagemView.updateView('Apenas dias úteis são aceitos.');
+        }        
     }
 
-    /* CRIAR MÉTODO PARA LIMPAR FORMULÁRIO */
+    private validaDiaUtil(data: Date): boolean {
+        return data.getDay() > DiaDaSemana.DOMINGO && data.getDay() < DiaDaSemana.SABADO;
+    }
 
-    /* CRIAR MÉTODO PARA VALIDAR DATA(APENAS SEGUNDA A SEXTA) ANTES DE INSERIR O OBJETO NEGOCIAÇÃO NA LISTA DE NEGOCIAÇÕES */
+    private limparFormulario(): void {
+        this.inputData.value = '';
+        this.inputQuantidade.value = '';
+        this.inputValor.value = '';
+    }
 }
