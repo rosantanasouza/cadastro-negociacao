@@ -23,10 +23,15 @@ export class NegociacaoController {
             this.inputValor.value
         )        
         
-        if (this.validaDiaUtil(novaNegociacao.data)) {            
-            console.log(novaNegociacao); //Exibindo a negociação criada.
-            this.listaNegociacoes.adicionarNegociacao(novaNegociacao); //Adicionando a negociação criada na lista de negociações.
+        if (this.validaDiaUtil(novaNegociacao.data)) {
+            console.log(novaNegociacao); //Exibindo a negociação criada.            
+            
+            this.listaNegociacoes.adicionarNegociacao(novaNegociacao); //Adicionando a negociação criada na lista de negociações.            
+            
             console.log(this.listaNegociacoes.listarNegociacoes()); //Exibindo a lista atualizada das negociações.
+            
+            this.mensagemView.updateView('Negociação cadastrada com sucesso!');            
+            
             this.limparFormulario();
         } else {            
             this.mensagemView.updateView('Apenas dias úteis são aceitos.');

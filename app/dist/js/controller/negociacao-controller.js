@@ -16,6 +16,7 @@ export class NegociacaoController {
             console.log(novaNegociacao);
             this.listaNegociacoes.adicionarNegociacao(novaNegociacao);
             console.log(this.listaNegociacoes.listarNegociacoes());
+            this.mensagemView.updateView('Negociação cadastrada com sucesso!');
             this.limparFormulario();
         }
         else {
