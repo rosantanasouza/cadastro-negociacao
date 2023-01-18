@@ -1,4 +1,5 @@
-export abstract class View <T>{
+export abstract class View<T>{
+    
     private elemento: HTMLElement;
 
     constructor(seletor: string) {

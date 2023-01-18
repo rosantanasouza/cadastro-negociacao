@@ -4,6 +4,13 @@ export class Negociacao {
         this._quantidade = quantidade;
         this._valor = valor;
     }
+    static novaNegociacao(dataString, quantidadeString, valorString) {
+        const data = new Date(dataString.replace(/-/g, ","));
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(valorString);
+        const negociacao = new Negociacao(data, quantidade, valor);
+        return negociacao;
+    }
     get data() {
         return this._data;
     }
@@ -12,12 +19,5 @@ export class Negociacao {
     }
     get valor() {
         return this._valor;
-    }
-    static novaNegociacao(dataString, quantidadeString, valorString) {
-        const data = new Date(dataString.replace(/-/g, ','));
-        const quantidade = parseInt(quantidadeString);
-        const valor = parseInt(valorString);
-        const negociacao = new Negociacao(data, quantidade, valor);
-        return negociacao;
     }
 }
