@@ -2,6 +2,7 @@ import { DiaDaSemana } from "../enums/dia-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
 import { NegociacoesServices } from "../services/negociacoes-services.js";
+import { imprimir } from "../utils/imprimir.js";
 import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
@@ -19,6 +20,7 @@ export class NegociacaoController {
         const novaNegociacao = Negociacao.novaNegociacao(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (this.validaDiaUtil(novaNegociacao.data)) {
             this.listaNegociacoes.adicionarNegociacao(novaNegociacao);
+            imprimir(novaNegociacao, this.listaNegociacoes);
             this.atualizaViewNegociacoes();
             this.limparFormulario();
         }
@@ -44,8 +46,8 @@ export class NegociacaoController {
     importaDados() {
         this.negociacoesServices.obterNegociacoesDaApi()
             .then((negociacoesApi) => {
-            for (const dadoNegociacao of negociacoesApi) {
-                this.listaNegociacoes.adicionarNegociacao(dadoNegociacao);
+            for (const negociacaoApi of negociacoesApi) {
+                this.listaNegociacoes.adicionarNegociacao(negociacaoApi);
             }
             this.negociacoesView.updateView(this.listaNegociacoes);
         });

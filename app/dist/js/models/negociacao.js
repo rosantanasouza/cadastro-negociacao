@@ -20,4 +20,11 @@ export class Negociacao {
     get valor() {
         return this._valor;
     }
+    paraTexto() {
+        return `
+            Data: ${new Intl.DateTimeFormat().format(this._data)}
+            Quantidade: ${this._quantidade}
+            Valor: ${this._valor}
+        `;
+    }
 }

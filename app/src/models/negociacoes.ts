@@ -1,13 +1,19 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes {
-    private negociacoes: Negociacao[] = [];
+    private _negociacoes: Negociacao[] = [];
 
     public adicionarNegociacao(negociacao: Negociacao): void {
-        this.negociacoes.push(negociacao);
+        this._negociacoes.push(negociacao);
     }
 
     public listarNegociacoes(): readonly Negociacao[] {
-        return this.negociacoes;
+        return this._negociacoes;
+    }
+
+    public paraTexto(): string {
+        return `
+            ${JSON.stringify(this._negociacoes, null, 2)}
+        `
     }
 }

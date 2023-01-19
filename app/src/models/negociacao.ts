@@ -16,7 +16,7 @@ export class Negociacao {
 
         const negociacao = new Negociacao(data, quantidade, valor);
         return negociacao;
-    }
+    }    
 
     public get data(): Date {
         return this._data;
@@ -28,5 +28,13 @@ export class Negociacao {
 
     public get valor(): number {
         return this._valor;
-    }    
+    } 
+    
+    public paraTexto(): string {
+        return `
+            Data: ${new Intl.DateTimeFormat().format(this._data)}
+            Quantidade: ${this._quantidade}
+            Valor: ${this._valor}
+        `
+    }
 }
