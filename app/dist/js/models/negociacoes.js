@@ -10,6 +10,7 @@ export class Negociacoes {
     }
     paraTexto() {
         return `
+            Lista de Negociacoes:
             ${JSON.stringify(this._negociacoes, null, 2)}
         `;
     }

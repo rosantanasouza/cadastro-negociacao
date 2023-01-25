@@ -2,6 +2,11 @@ import { View } from "./view.js"
 import { Negociacoes } from "../models/negociacoes";
 
 export class NegociacoesView extends View<Negociacoes> {
+
+    constructor(seletor: string) {
+        super(seletor);
+    }
+    
     protected template(model: Negociacoes): string {
         return `
                 <table class="table table-bordered">

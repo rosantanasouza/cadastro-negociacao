@@ -7,6 +7,7 @@ import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 
 export class NegociacaoController {
+    
     private inputData: HTMLInputElement;
     private inputQuantidade: HTMLInputElement;
     private inputValor: HTMLInputElement;
@@ -28,11 +29,12 @@ export class NegociacaoController {
             this.inputQuantidade.value,
             this.inputValor.value
         )
+        
         if (this.validaDiaUtil(novaNegociacao.data)) {            
-            this.listaNegociacoes.adicionarNegociacao(novaNegociacao);
-            imprimir(novaNegociacao, this.listaNegociacoes);
-            this.atualizaViewNegociacoes();
+            this.listaNegociacoes.adicionarNegociacao(novaNegociacao);            
             this.limparFormulario();
+            this.atualizaViewNegociacoes();            
+            imprimir(novaNegociacao, this.listaNegociacoes);
         }
         else {
             this.mensagemViewAlerta();

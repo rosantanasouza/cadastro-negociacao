@@ -20,9 +20,9 @@ export class NegociacaoController {
         const novaNegociacao = Negociacao.novaNegociacao(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (this.validaDiaUtil(novaNegociacao.data)) {
             this.listaNegociacoes.adicionarNegociacao(novaNegociacao);
-            imprimir(novaNegociacao, this.listaNegociacoes);
-            this.atualizaViewNegociacoes();
             this.limparFormulario();
+            this.atualizaViewNegociacoes();
+            imprimir(novaNegociacao, this.listaNegociacoes);
         }
         else {
             this.mensagemViewAlerta();

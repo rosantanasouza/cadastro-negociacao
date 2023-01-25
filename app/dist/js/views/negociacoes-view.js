@@ -1,5 +1,8 @@
 import { View } from "./view.js";
 export class NegociacoesView extends View {
+    constructor(seletor) {
+        super(seletor);
+    }
     template(model) {
         return `
                 <table class="table table-bordered">

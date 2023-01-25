@@ -22,7 +22,8 @@ export class Negociacao {
     }
     paraTexto() {
         return `
-            Data: ${new Intl.DateTimeFormat().format(this._data)}
+            Objeto Negociacao Criado:
+            Data: ${this._data}
             Quantidade: ${this._quantidade}
             Valor: ${this._valor}
         `;

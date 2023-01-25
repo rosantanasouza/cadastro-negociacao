@@ -1,4 +1,7 @@
-export class Negociacao {
+import { Imprimivel } from "../utils/imprimivel.js";
+
+export class Negociacao implements Imprimivel {
+    
     private _data: Date;
     private _quantidade: number;
     private _valor: number;
@@ -6,7 +9,7 @@ export class Negociacao {
     constructor(data: Date, quantidade: number, valor: number) {
         this._data = data;
         this._quantidade = quantidade;
-        this._valor = valor;
+        this._valor = valor;        
     }
 
     public static novaNegociacao(dataString: string, quantidadeString: string, valorString: string): Negociacao {
@@ -32,7 +35,8 @@ export class Negociacao {
     
     public paraTexto(): string {
         return `
-            Data: ${new Intl.DateTimeFormat().format(this._data)}
+            Objeto Negociacao Criado:
+            Data: ${this._data}
             Quantidade: ${this._quantidade}
             Valor: ${this._valor}
         `
