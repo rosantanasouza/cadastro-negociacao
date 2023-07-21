@@ -1,9 +1,16 @@
+# Cadastro de Negociações
 
-#  Cadastro de Negociações
+| :placard: Vitrine.Dev |                                                 |
+| --------------------- | ----------------------------------------------- |
+| :sparkles: Nome       | **Cadastro de Negociações**                     |
+| :label: Tecnologias   | Node.js, Typescript, Bootstrap                  |
+| :fire: Curso          | https://cursos.alura.com.br/formacao-typescript |
 
-A aplicação foi construída seguindo os módulos do curso de formação em Typescript da [Alura](https://www.alura.com.br/).
+![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
 
-A aplicação foi desenvolvida durante o a formação, para que com a utilização do Typescript, fosse criado uma aplicação web de Cadastro de Negociação bancária.
+## Detalhes do projeto
+
+A aplicação foi desenvolvida durante a formação, para que com a utilização do Typescript, fosse criado uma aplicação web de Cadastro de Negociação bancária.
 
 ## Tópicos das aulas
 
@@ -17,10 +24,10 @@ A aplicação foi desenvolvida durante o a formação, para que com a utilizaç�
 - Polimorfismo
 
 ## Tecnologias utilizadas
+
 - [NodeJS](https://nodejs.org/en/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Bootstrap](https://getbootstrap.com/)
-
 
 ## Executando o projeto
 
@@ -49,32 +56,35 @@ Inicie o servidor
 ```
 
 Abrir a aplicação
+
 ```bash
    http://localhost:3000
 ```
-
 
 ## Utilizando a API
 
 Não é obrigatório o uso da API para executar a aplicação. Mas caso queira, basta fazer os seguintes passos:
 
-Entre no diretório da API, que é uma pasta dentro do projeto chamada ``servidor-api``
+Entre no diretório da API, que é uma pasta dentro do projeto chamada `servidor-api`
 
 ```bash
   cd servidor-api
 ```
 
 Instale as dependências da API
+
 ```bash
   npm install
 ```
 
 Execute a API
+
 ```bash
   npm run start
 ```
 
 Para ver os dados da API
+
 ```bash
 http://localhost:8080/dados
 ```
