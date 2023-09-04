@@ -6,7 +6,10 @@
 | :label: Tecnologias   | Node.js, Typescript, Bootstrap                  |
 | :fire: Curso          | https://cursos.alura.com.br/formacao-typescript |
 
-![](https://raw.githubusercontent.com/rosantanasouza/cadastro-negociacao/main/img/form-cadastro-negociacao.jpg#vitrinedev)
+<img src="https://raw.githubusercontent.com/rosantanasouza/cadastro-negociacao/main/img/form-cadastro-negociacao.jpg#vitrinedev"
+width="500px" 
+height="500px"
+/>
 
 ## Detalhes do projeto
 
