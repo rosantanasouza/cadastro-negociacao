@@ -7,7 +7,7 @@
 | :fire: Curso          | https://cursos.alura.com.br/formacao-typescript |
 
 <img src="https://raw.githubusercontent.com/rosantanasouza/cadastro-negociacao/main/img/form-cadastro-negociacao.jpg#vitrinedev"
-width="500px" 
+width="1200px" 
 height="500px"
 />
 
